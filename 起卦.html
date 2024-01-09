@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>x</title>
+    <style>
+      body {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="init()">起卦</button>
+    <div id="content"></div>
+    <script>
+      const gua = {
+        111: "—— x",
+        "011": "——",
+        101: "——",
+        "001": "--",
+        110: "——",
+        "010": "--",
+        100: "--",
+        "000": "-- x",
+      };
+      function init() {
+        let content = [];
+        for (let i = 0; i < 6; i++) {
+          const qk = [0, 1];
+          let r = "";
+          for (let k = 0; k < 3; k++) {
+            const s = parseInt(Math.random() * 2);
+            r += qk[s];
+            console.log(i, k);
+          }
+          console.log(gua[r]);
+          content.push(gua[r]);
+        }
+        let result = "";
+        content.forEach((item) => (result += `${item}\n`));
+        document.querySelector("#content").innerText = result;
+      }
+    </script>
+  </body>
+</html>
