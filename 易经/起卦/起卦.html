@@ -15,14 +15,14 @@
     <div id="content"></div>
     <script>
       const gua = {
-        111: "—— x",
+        111: "-- x",
         "011": "——",
         101: "——",
         "001": "--",
         110: "——",
         "010": "--",
         100: "--",
-        "000": "-- x",
+        "000": "—— x",
       };
       function init() {
         let content = [];
@@ -35,7 +35,7 @@
             console.log(i, k);
           }
           console.log(gua[r]);
-          content.push(gua[r]);
+          content.unshift(gua[r]);
         }
         let result = "";
         content.forEach((item) => (result += `${item}\n`));
